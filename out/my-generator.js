@@ -39,12 +39,14 @@ System.registerModule("../dev/my-generator.js", [], function() {
     }, $__0, this);
   });
   var aFruitGenerator = FruitGenerator(),
+      nextFruit = aFruitGenerator.next(),
       messageElement = document.getElementById("message");
-  while (!aFruitGenerator.next().done) {
+  console.log(JSON.stringify(nextFruit));
+  while (!nextFruit.done) {
     var liElement = document.createElement('li');
     liElement.innerText = nextFruit.value;
     messageElement.appendChild(liElement);
-    aFruitGenerator.next();
+    nextFruit = aFruitGenerator.next();
   }
   return {};
 });

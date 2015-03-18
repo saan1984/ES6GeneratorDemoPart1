@@ -5,7 +5,6 @@ var FruitGenerator = function*(){
     yield "Mango";
 };
 
-
 var aFruitGenerator = FruitGenerator(),
     nextFruit = aFruitGenerator.next(),
     messageElement = document.getElementById("message");
